@@ -1,0 +1,8 @@
+D:\Курсовая 2024\Makler\bin\Debug\Makler.exe.config
+D:\Курсовая 2024\Makler\bin\Debug\Makler.exe
+D:\Курсовая 2024\Makler\bin\Debug\Makler.pdb
+D:\Курсовая 2024\Makler\obj\Debug\Makler.csproj.AssemblyReference.cache
+D:\Курсовая 2024\Makler\obj\Debug\Makler.csproj.SuggestedBindingRedirects.cache
+D:\Курсовая 2024\Makler\obj\Debug\Makler.csproj.CoreCompileInputs.cache
+D:\Курсовая 2024\Makler\obj\Debug\Makler.exe
+D:\Курсовая 2024\Makler\obj\Debug\Makler.pdb

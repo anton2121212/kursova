@@ -111,6 +111,7 @@ namespace Makler
                 ForegroundColor = ConsoleColor.Green;
                 WriteLine("\nПодходящая квартира не найдена. Добавляем новую квартиру в картотеку.");
                 ResetColor();
+                WriteLine();
                 RequiredFlat requiredFlat = new RequiredFlat(roomCount, area, floor, region);
                 flats.Add(requiredFlat);
             }
@@ -144,11 +145,13 @@ namespace Makler
                 ForegroundColor = ConsoleColor.Red;
                 WriteLine("Квартиры отсутствуют в картотеке.");
                 ResetColor();
+                WriteLine();
                 return;
             }
             ForegroundColor = ConsoleColor.Red;
             WriteLine("Требуемые: ");
             ResetColor();
+            
             foreach (var apartment in flats)
             {
                 if(apartment is RequiredFlat)
@@ -156,9 +159,11 @@ namespace Makler
                     apartment.Info();
                 }
             }
+            WriteLine();
             ForegroundColor = ConsoleColor.Blue;
             WriteLine("Имеющиеся: ");
-            ResetColor();
+           
+            WriteLine();
             foreach (var apartamet in flats)
             {
                 if(apartamet is HavingFlat)

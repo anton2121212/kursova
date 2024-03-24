@@ -19,11 +19,13 @@ namespace Makler
 
             while (true)
             {
-                WriteLine("\nВыберите действие:");
+                WriteLine("Выберите действие:");
                 WriteLine(" 1. Добавить квартиру");
                 WriteLine(" 2. Поиск вариантов квартир");
                 WriteLine(" 3. Вывести всю картотеку квартир");
+                ForegroundColor = ConsoleColor.DarkRed;
                 WriteLine(" 4. Выйти");
+                ResetColor();
 
                 ConsoleKeyInfo keyInfo = ReadKey(intercept: true);
                 bool isValidInput = Enum.TryParse(keyInfo.KeyChar.ToString(), out option);

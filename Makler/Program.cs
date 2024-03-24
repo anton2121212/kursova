@@ -30,7 +30,7 @@ namespace Makler
 
                 if (!isValidInput || !Enum.IsDefined(typeof(MenuOption), option))
                 {
-                    Console.WriteLine("\nНекорректный ввод. Пожалуйста, выберите опцию из списка.");
+                    WriteLine("\nНекорректный ввод. Пожалуйста, выберите опцию из списка.");
                     continue;
                 }
                 Clear();
@@ -40,6 +40,7 @@ namespace Makler
                 {
                     case MenuOption.AddApartment:
                         actionsFlats.AddFlat();
+                        Clear();
             
                         break;
 

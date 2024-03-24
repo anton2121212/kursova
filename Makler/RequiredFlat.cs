@@ -13,7 +13,7 @@ namespace Makler
         public RequiredFlat(int countRooms, double area, int floor, string region) : base(countRooms, area, floor, region) { }
         public override void Info()
         {
-            WriteLine($"Количество комнат: {CountRooms}; Площадь: {Area}; Этаж: {Floor}; Район: {Region}");
+            WriteLine($"Количество комнат: {CountRooms}; Площадь: {Area} кв.м; Этаж: {Floor}; Район: {Region}");
         }
 
     }

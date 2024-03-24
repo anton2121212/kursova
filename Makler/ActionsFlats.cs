@@ -12,36 +12,36 @@ namespace Makler
         private List<Flat> flats = new List<Flat>();
         public void AddFlat()
         {
-           WriteLine("Введите количество комнат:");
+           Write("Введите количество комнат: ");
             int countRooms;
             while (!int.TryParse(ReadLine(), out countRooms) || countRooms <= 0)
             {
                 WriteLine("Некорректный ввод. Пожалуйста, введите целое положительное число.");
-                WriteLine("Введите количество комнат:");
+                Write("Введите количество комнат: ");
             }
 
-            WriteLine("Введите площадь:");
+            Write("Введите площадь в кв.м: ");
             double area;
             while (!double.TryParse(ReadLine(), out area) || area <= 0)
             {
                 WriteLine("Некорректный ввод. Пожалуйста, введите положительное число.");
-                WriteLine("Введите площадь:");
+                Write("Введите площадь в кв.м: ");
             }
 
-            WriteLine("Введите этаж:");
+            Write("Введите этаж: ");
             int floor;
             while (!int.TryParse(ReadLine(), out floor) || floor <= 0)
             {
                 WriteLine("Некорректный ввод. Пожалуйста, введите целое положительное число.");
-                WriteLine("Введите этаж:");
+                Write("Введите этаж: ");
             }
 
-            WriteLine("Введите район:");
+            Write("Введите район: ");
             string region;
             while (string.IsNullOrEmpty(region = ReadLine().Trim()))
             {
                 WriteLine("Некорректный ввод. Пожалуйста, введите непустое значение.");
-                WriteLine("Введите район:");
+                Write("Введите район: ");
             }
 
             HavingFlat havingFlat = new HavingFlat(countRooms,area, floor,region);
@@ -50,31 +50,37 @@ namespace Makler
         }
         public void WriteFlat()
         {
-            WriteLine("Введите количество комнат:");
+            Write("Введите количество комнат: ");
             int countRooms;
             while (!int.TryParse(ReadLine(), out countRooms) || countRooms <= 0)
             {
                 WriteLine("Некорректный ввод. Пожалуйста, введите целое положительное число.");
-                WriteLine("Введите количество комнат:");
+                Write("Введите количество комнат: ");
             }
 
-            WriteLine("Введите площадь:");
+            Write("Введите площадь в кв.м: ");
             double area;
             while (!double.TryParse(ReadLine(), out area) || area <= 0)
             {
                 WriteLine("Некорректный ввод. Пожалуйста, введите положительное число.");
-                WriteLine("Введите площадь:");
+                Write("Введите площадь в кв.м: ");
             }
 
-            WriteLine("Введите этаж:");
+            Write("Введите этаж: ");
             int floor;
             while (!int.TryParse(ReadLine(), out floor) || floor <= 0)
             {
                 WriteLine("Некорректный ввод. Пожалуйста, введите целое положительное число.");
-                WriteLine("Введите этаж:");
+                Write("Введите этаж: ");
             }
 
-            string region ="";
+            Write("Введите район: ");
+            string region;
+            while (string.IsNullOrEmpty(region = ReadLine().Trim()))
+            {
+                WriteLine("Некорректный ввод. Пожалуйста, введите непустое значение.");
+                Write("Введите район: ");
+            }
             SearchAndManageApartments(floor, countRooms, area,region);
         }
         public void SearchAndManageApartments(int floor, int roomCount, double area,string region)
@@ -84,6 +90,7 @@ namespace Makler
             {
                 if (flat.Floor == floor &&
                     flat.CountRooms == roomCount &&
+                    flat.Region == region &&
                     Math.Abs(flat.Area - area) <= area * 0.1)
                 {
                     foundFlat = flat;
@@ -93,35 +100,73 @@ namespace Makler
 
             if (foundFlat != null)
             {
-                WriteLine("Найдена подходящая квартира:");
+                ForegroundColor = ConsoleColor.Green;
+                WriteLine("\nНайдена подходящая квартира:");
+                ResetColor();
                 foundFlat.Info();
                 flats.Remove(foundFlat);
             }
             else
             {
-                WriteLine("Подходящая квартира не найдена. Добавляем новую квартиру в картотеку.");
+                ForegroundColor = ConsoleColor.Green;
+                WriteLine("\nПодходящая квартира не найдена. Добавляем новую квартиру в картотеку.");
+                ResetColor();
                 RequiredFlat requiredFlat = new RequiredFlat(roomCount, area, floor, region);
                 flats.Add(requiredFlat);
             }
         }
         public void Info()
         {
+            //Проверка есть ли вообще квартиры 
+            bool requiredFlatsExist = false;
+            bool havingFlatsExist = false;
+
+            foreach (var apartment in flats)
+            {
+                if (apartment is RequiredFlat)
+                {
+                    requiredFlatsExist = true;
+                    break;
+                }
+            }
+
+            foreach (var apartment in flats)
+            {
+                if (apartment is HavingFlat)
+                {
+                    havingFlatsExist = true;
+                    break;
+                }
+            }
+            //Если нет, то выводит сообщение 
+            if (!requiredFlatsExist && !havingFlatsExist)
+            {
+                ForegroundColor = ConsoleColor.Red;
+                WriteLine("Квартиры отсутствуют в картотеке.");
+                ResetColor();
+                return;
+            }
+            ForegroundColor = ConsoleColor.Red;
             WriteLine("Требуемые: ");
-            foreach(var apartment in flats)
+            ResetColor();
+            foreach (var apartment in flats)
             {
                 if(apartment is RequiredFlat)
                 {
                     apartment.Info();
                 }
             }
+            ForegroundColor = ConsoleColor.Blue;
             WriteLine("Имеющиеся: ");
-            foreach(var apartamet in flats)
+            ResetColor();
+            foreach (var apartamet in flats)
             {
                 if(apartamet is HavingFlat)
                 {
                     apartamet.Info();
                 }
             }
+
         }
     }
 }

@@ -42,7 +42,7 @@ namespace Makler
                 {
                     case MenuOption.AddApartment:
                         actionsFlats.AddFlat();
-                        Clear();
+                        
             
                         break;
 

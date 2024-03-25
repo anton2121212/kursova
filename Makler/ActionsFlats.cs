@@ -43,10 +43,30 @@ namespace Makler
                 WriteLine("Некорректный ввод. Пожалуйста, введите непустое значение.");
                 Write("Введите район: ");
             }
-
-            HavingFlat havingFlat = new HavingFlat(countRooms,area, floor,region);
-
-            flats.Add(havingFlat);
+            WriteLine();
+            bool foundRequired = false;
+            foreach (var reqFlat in flats.Where(f => f is RequiredFlat))
+            {
+                if (reqFlat.Floor == floor &&
+                    reqFlat.CountRooms == countRooms &&
+                    reqFlat.Region == region &&
+                    Math.Abs(reqFlat.Area - area) <= area * 0.1)
+                {
+                    ForegroundColor = ConsoleColor.Green;
+                    WriteLine("\nОбнаружено совпадение с требуемой квартирой. Удаляем из списка требуемых квартир.");
+                    ResetColor();
+                    WriteLine();
+                    flats.Remove(reqFlat);
+                    foundRequired = true;
+                    break; // Выходим из цикла, чтобы не искать дальше
+                }
+                
+            }
+            if (!foundRequired)
+            {
+                HavingFlat havingFlat = new HavingFlat(countRooms, area, floor, region);
+                flats.Add(havingFlat);
+            }
         }
         public void WriteFlat()
         {
@@ -104,6 +124,7 @@ namespace Makler
                 WriteLine("\nНайдена подходящая квартира:");
                 ResetColor();
                 foundFlat.Info();
+                WriteLine();
                 flats.Remove(foundFlat);
             }
             else
@@ -162,8 +183,8 @@ namespace Makler
             WriteLine();
             ForegroundColor = ConsoleColor.Blue;
             WriteLine("Имеющиеся: ");
+            ResetColor();
            
-            WriteLine();
             foreach (var apartamet in flats)
             {
                 if(apartamet is HavingFlat)
@@ -171,7 +192,7 @@ namespace Makler
                     apartamet.Info();
                 }
             }
-
+            WriteLine();
         }
     }
 }

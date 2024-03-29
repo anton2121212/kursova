@@ -16,7 +16,7 @@ namespace Makler
         {
             ActionsFlats actionsFlats = new ActionsFlats();
             MenuOption option;
-
+            actionsFlats.LoadDataFromFile(actionsFlats);
             while (true)
             {
                 WriteLine("Выберите действие:");
@@ -42,12 +42,12 @@ namespace Makler
                 {
                     case MenuOption.AddApartment:
                         actionsFlats.AddFlat();
-                        
-            
+                        actionsFlats.SaveDataToFile(actionsFlats);
                         break;
 
                     case MenuOption.SearchApartments:
                         actionsFlats.WriteFlat();
+                        actionsFlats.SaveDataToFile(actionsFlats);
                         break;
 
                     case MenuOption.ShowAllApartments:

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -193,6 +194,83 @@ namespace Makler
                 }
             }
             WriteLine();
+        }
+        public void LoadDataFromFile(ActionsFlats actionsFlats)
+        {
+            string filePath = @"C:\Users\Kab-31-13\Downloads\kursova-main\kursova-main\Makler\Base.txt";
+
+            try
+            {
+                if (File.Exists(filePath))
+                {
+                    string[] lines = File.ReadAllLines(filePath);
+
+                    foreach (string line in lines)
+                    {
+                        string[] data = line.Split(';');
+                        if (data.Length >= 5)
+                        {
+                            string type = data[0];
+                            int countRooms = int.Parse(data[1]);
+                            double area = double.Parse(data[2]);
+                            int floor = int.Parse(data[3]);
+                            string region = data[4];
+
+                            if (type == "REQ")
+                            {
+                                RequiredFlat requiredFlat = new RequiredFlat(countRooms, area, floor, region);
+                                actionsFlats.flats.Add(requiredFlat);
+                            }
+                            else if (type == "HAV")
+                            {
+                                HavingFlat havingFlat = new HavingFlat(countRooms, area, floor, region);
+                                actionsFlats.flats.Add(havingFlat);
+                            }
+                        }
+                    }
+
+
+                }
+                else
+                {
+                    WriteLine("Файл с данными не найден. Создан новый файл.");
+                    File.Create(filePath).Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                WriteLine($"Ошибка при загрузке данных из файла: {ex.Message}");
+            }
+        }
+
+        // Метод для сохранения данных в файл
+        public void SaveDataToFile(ActionsFlats actionsFlats)
+        {
+            string filePath = @"C:\Users\Kab-31-13\Downloads\kursova-main\kursova-main\Makler\Base.txt";
+
+            try
+            {
+                using (StreamWriter writer = new StreamWriter(filePath))
+                {
+                    foreach (Flat flat in actionsFlats.flats)
+                    {
+                        if (flat is RequiredFlat requiredFlat)
+                        {
+                            writer.WriteLine($"REQ;{requiredFlat.CountRooms};{requiredFlat.Area};{requiredFlat.Floor};{requiredFlat.Region};");
+                        }
+                        else if (flat is HavingFlat havingFlat)
+                        {
+                            writer.WriteLine($"HAV;{havingFlat.CountRooms};{havingFlat.Area};{havingFlat.Floor};{havingFlat.Region};");
+                        }
+                    }
+                }
+
+
+            }
+            catch (Exception ex)
+            {
+                WriteLine($"Ошибка при сохранении данных в файл: {ex.Message}");
+            }
         }
     }
 }

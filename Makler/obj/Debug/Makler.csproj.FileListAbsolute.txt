@@ -13,3 +13,11 @@ C:\Users\Kab-31-13\Downloads\kursova-main\kursova-main\Makler\obj\Debug\Makler.c
 C:\Users\Kab-31-13\Downloads\kursova-main\kursova-main\Makler\obj\Debug\Makler.csproj.CoreCompileInputs.cache
 C:\Users\Kab-31-13\Downloads\kursova-main\kursova-main\Makler\obj\Debug\Makler.exe
 C:\Users\Kab-31-13\Downloads\kursova-main\kursova-main\Makler\obj\Debug\Makler.pdb
+C:\Users\Kirill\Downloads\kursova-main\kursova-main\Makler\bin\Debug\Makler.exe.config
+C:\Users\Kirill\Downloads\kursova-main\kursova-main\Makler\bin\Debug\Makler.exe
+C:\Users\Kirill\Downloads\kursova-main\kursova-main\Makler\bin\Debug\Makler.pdb
+C:\Users\Kirill\Downloads\kursova-main\kursova-main\Makler\obj\Debug\Makler.csproj.AssemblyReference.cache
+C:\Users\Kirill\Downloads\kursova-main\kursova-main\Makler\obj\Debug\Makler.csproj.SuggestedBindingRedirects.cache
+C:\Users\Kirill\Downloads\kursova-main\kursova-main\Makler\obj\Debug\Makler.csproj.CoreCompileInputs.cache
+C:\Users\Kirill\Downloads\kursova-main\kursova-main\Makler\obj\Debug\Makler.exe
+C:\Users\Kirill\Downloads\kursova-main\kursova-main\Makler\obj\Debug\Makler.pdb

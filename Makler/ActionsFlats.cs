@@ -65,7 +65,7 @@ namespace Makler
             }
             if (!foundRequired)
             {
-                HavingFlat havingFlat = new HavingFlat(countRooms, area, floor, region);
+                HavingFlat havingFlat = new HavingFlat(countRooms, area, floor, region, DateTime.Now) ;
                 flats.Add(havingFlat);
             }
         }
@@ -134,7 +134,7 @@ namespace Makler
                 WriteLine("\nПодходящая квартира не найдена. Добавляем новую квартиру в картотеку.");
                 ResetColor();
                 WriteLine();
-                RequiredFlat requiredFlat = new RequiredFlat(roomCount, area, floor, region);
+                RequiredFlat requiredFlat = new RequiredFlat(roomCount, area, floor, region,DateTime.Now);
                 flats.Add(requiredFlat);
             }
         }
@@ -197,7 +197,7 @@ namespace Makler
         }
         public void LoadDataFromFile(ActionsFlats actionsFlats)
         {
-            string filePath = @"C:\Users\Kab-31-13\Downloads\kursova-main\kursova-main\Makler\Base.txt";
+            string filePath = @"C:\Users\Kirill\Downloads\kursova-main\kursova-main\Makler\Base.txt";
 
             try
             {
@@ -208,22 +208,23 @@ namespace Makler
                     foreach (string line in lines)
                     {
                         string[] data = line.Split(';');
-                        if (data.Length >= 5)
+                        if (data.Length >= 6)
                         {
                             string type = data[0];
                             int countRooms = int.Parse(data[1]);
                             double area = double.Parse(data[2]);
                             int floor = int.Parse(data[3]);
                             string region = data[4];
+                            DateTime addedTime = DateTime.Parse(data[5]);
 
                             if (type == "REQ")
                             {
-                                RequiredFlat requiredFlat = new RequiredFlat(countRooms, area, floor, region);
+                                RequiredFlat requiredFlat = new RequiredFlat(countRooms, area, floor, region, addedTime);
                                 actionsFlats.flats.Add(requiredFlat);
                             }
                             else if (type == "HAV")
                             {
-                                HavingFlat havingFlat = new HavingFlat(countRooms, area, floor, region);
+                                HavingFlat havingFlat = new HavingFlat(countRooms, area, floor, region, addedTime);
                                 actionsFlats.flats.Add(havingFlat);
                             }
                         }
@@ -246,7 +247,7 @@ namespace Makler
         // Метод для сохранения данных в файл
         public void SaveDataToFile(ActionsFlats actionsFlats)
         {
-            string filePath = @"C:\Users\Kab-31-13\Downloads\kursova-main\kursova-main\Makler\Base.txt";
+            string filePath = @"C:\Users\Kirill\Downloads\kursova-main\kursova-main\Makler\Base.txt";
 
             try
             {
@@ -256,11 +257,11 @@ namespace Makler
                     {
                         if (flat is RequiredFlat requiredFlat)
                         {
-                            writer.WriteLine($"REQ;{requiredFlat.CountRooms};{requiredFlat.Area};{requiredFlat.Floor};{requiredFlat.Region};");
+                            writer.WriteLine($"REQ;{requiredFlat.CountRooms};{requiredFlat.Area};{requiredFlat.Floor};{requiredFlat.Region};{requiredFlat.AddedTime}");
                         }
                         else if (flat is HavingFlat havingFlat)
                         {
-                            writer.WriteLine($"HAV;{havingFlat.CountRooms};{havingFlat.Area};{havingFlat.Floor};{havingFlat.Region};");
+                            writer.WriteLine($"HAV;{havingFlat.CountRooms};{havingFlat.Area};{havingFlat.Floor};{havingFlat.Region};{havingFlat.AddedTime}");
                         }
                     }
                 }

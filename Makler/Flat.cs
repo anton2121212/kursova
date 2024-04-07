@@ -15,13 +15,15 @@ namespace Makler
         public double Area { get; set; }
         public int Floor { get; set; }
         public string Region { get; set; }
+        public DateTime AddedTime { get; }
         public Flat() { }
-        public Flat(int countRooms, double area, int floor, string region)
+        public Flat(int countRooms, double area, int floor, string region, DateTime addedTime)
         {
             CountRooms = countRooms;
             Area = area;
             Floor = floor;
             Region = region;
+            AddedTime = addedTime;
         }
         public abstract void Info();
         

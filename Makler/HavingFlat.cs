@@ -10,10 +10,10 @@ namespace Makler
     class HavingFlat : Flat
     {
         public HavingFlat() { }
-        public HavingFlat(int countRooms, double area, int floor, string region):base(countRooms, area, floor, region) { }
+        public HavingFlat(int countRooms, double area, int floor, string region, DateTime addedTime) :base(countRooms, area, floor, region, addedTime) { }
         public override void Info()
         {
-            WriteLine($"Количество комнат: {CountRooms}; Площадь: {Area}  кв.м; Этаж: {Floor}; Район: {Region}");
+            WriteLine($"Количество комнат: {CountRooms}; Площадь: {Area}  кв.м; Этаж: {Floor}; Район: {Region}; Время добавления: {AddedTime.ToString("dd MMM HH:mm")}");
         }
     }
 

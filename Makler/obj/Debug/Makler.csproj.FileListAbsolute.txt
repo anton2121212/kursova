@@ -6,18 +6,11 @@ D:\Курсовая 2024\Makler\obj\Debug\Makler.csproj.SuggestedBindingRedirect
 D:\Курсовая 2024\Makler\obj\Debug\Makler.csproj.CoreCompileInputs.cache
 D:\Курсовая 2024\Makler\obj\Debug\Makler.exe
 D:\Курсовая 2024\Makler\obj\Debug\Makler.pdb
-C:\Users\Kab-31-13\Downloads\kursova-main\kursova-main\Makler\bin\Debug\Makler.exe.config
-C:\Users\Kab-31-13\Downloads\kursova-main\kursova-main\Makler\bin\Debug\Makler.exe
-C:\Users\Kab-31-13\Downloads\kursova-main\kursova-main\Makler\bin\Debug\Makler.pdb
-C:\Users\Kab-31-13\Downloads\kursova-main\kursova-main\Makler\obj\Debug\Makler.csproj.AssemblyReference.cache
-C:\Users\Kab-31-13\Downloads\kursova-main\kursova-main\Makler\obj\Debug\Makler.csproj.CoreCompileInputs.cache
-C:\Users\Kab-31-13\Downloads\kursova-main\kursova-main\Makler\obj\Debug\Makler.exe
-C:\Users\Kab-31-13\Downloads\kursova-main\kursova-main\Makler\obj\Debug\Makler.pdb
-C:\Users\Kirill\Downloads\kursova-main\kursova-main\Makler\bin\Debug\Makler.exe.config
-C:\Users\Kirill\Downloads\kursova-main\kursova-main\Makler\bin\Debug\Makler.exe
-C:\Users\Kirill\Downloads\kursova-main\kursova-main\Makler\bin\Debug\Makler.pdb
-C:\Users\Kirill\Downloads\kursova-main\kursova-main\Makler\obj\Debug\Makler.csproj.AssemblyReference.cache
-C:\Users\Kirill\Downloads\kursova-main\kursova-main\Makler\obj\Debug\Makler.csproj.SuggestedBindingRedirects.cache
-C:\Users\Kirill\Downloads\kursova-main\kursova-main\Makler\obj\Debug\Makler.csproj.CoreCompileInputs.cache
-C:\Users\Kirill\Downloads\kursova-main\kursova-main\Makler\obj\Debug\Makler.exe
-C:\Users\Kirill\Downloads\kursova-main\kursova-main\Makler\obj\Debug\Makler.pdb
+D:\Kyrova 2024\Makler\bin\Debug\Makler.exe.config
+D:\Kyrova 2024\Makler\bin\Debug\Makler.exe
+D:\Kyrova 2024\Makler\bin\Debug\Makler.pdb
+D:\Kyrova 2024\Makler\obj\Debug\Makler.csproj.AssemblyReference.cache
+D:\Kyrova 2024\Makler\obj\Debug\Makler.csproj.SuggestedBindingRedirects.cache
+D:\Kyrova 2024\Makler\obj\Debug\Makler.csproj.CoreCompileInputs.cache
+D:\Kyrova 2024\Makler\obj\Debug\Makler.exe
+D:\Kyrova 2024\Makler\obj\Debug\Makler.pdb

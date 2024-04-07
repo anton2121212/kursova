@@ -13,7 +13,7 @@ namespace Makler
         private List<Flat> flats = new List<Flat>();
         public void AddFlat()
         {
-           Write("Введите количество комнат: ");
+            Write("Введите количество комнат: ");
             int countRooms;
             while (!int.TryParse(ReadLine(), out countRooms) || countRooms <= 0)
             {
@@ -61,7 +61,7 @@ namespace Makler
                     foundRequired = true;
                     break; // Выходим из цикла, чтобы не искать дальше
                 }
-                
+
             }
             if (!foundRequired)
             {
@@ -106,9 +106,9 @@ namespace Makler
                 WriteLine("Некорректный ввод. Пожалуйста, введите непустое значение.");
                 Write("Введите район: ");
             }
-            SearchAndManageApartments(floor, countRooms, area,region);
+            SearchAndManageApartments(floor, countRooms, area, region);
         }
-        public void SearchAndManageApartments(int floor, int roomCount, double area,string region)
+        public void SearchAndManageApartments(int floor, int roomCount, double area, string region)
         {
             Flat foundFlat = null;
             foreach (var flat in flats)
@@ -118,7 +118,7 @@ namespace Makler
                     flat.Region == region &&
                     Math.Abs(flat.Area - area) <= area * 0.1)
                 {
-                    
+
                     foundFlat = flat;
                     break;
                 }
@@ -139,7 +139,7 @@ namespace Makler
                 WriteLine("\nПодходящая квартира не найдена. Добавляем новую квартиру в картотеку.");
                 ResetColor();
                 WriteLine();
-                RequiredFlat requiredFlat = new RequiredFlat(roomCount, area, floor, region,DateTime.Now);
+                RequiredFlat requiredFlat = new RequiredFlat(roomCount, area, floor, region, DateTime.Now);
                 flats.Add(requiredFlat);
             }
         }
@@ -178,10 +178,10 @@ namespace Makler
             ForegroundColor = ConsoleColor.Red;
             WriteLine("Требуемые: ");
             ResetColor();
-            
+
             foreach (var apartment in flats)
             {
-                if(apartment is RequiredFlat)
+                if (apartment is RequiredFlat)
                 {
                     apartment.Info();
                 }
@@ -190,10 +190,10 @@ namespace Makler
             ForegroundColor = ConsoleColor.Blue;
             WriteLine("Имеющиеся: ");
             ResetColor();
-           
+
             foreach (var apartamet in flats)
             {
-                if(apartamet is HavingFlat)
+                if (apartamet is HavingFlat)
                 {
                     apartamet.Info();
                 }
@@ -202,7 +202,7 @@ namespace Makler
         }
         public void LoadDataFromFile(ActionsFlats actionsFlats)
         {
-            string filePath = @"C:\Users\Kirill\Downloads\kursova-main\kursova-main\Makler\Base.txt";
+            string filePath = @"D:\Kyrova 2024\Makler\Base.txt";
 
             try
             {
@@ -252,7 +252,7 @@ namespace Makler
         // Метод для сохранения данных в файл
         public void SaveDataToFile(ActionsFlats actionsFlats)
         {
-            string filePath = @"C:\Users\Kirill\Downloads\kursova-main\kursova-main\Makler\Base.txt";
+            string filePath = @"D:\Kyrova 2024\Makler\Base.txt";
 
             try
             {

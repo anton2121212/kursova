@@ -15,7 +15,9 @@ namespace Makler
         static void Main(string[] args)
         {
             ActionsFlats actionsFlats = new ActionsFlats();
+            
             MenuOption option;
+
             actionsFlats.LoadDataFromFile(actionsFlats);
             while (true)
             {
@@ -26,6 +28,7 @@ namespace Makler
                 ForegroundColor = ConsoleColor.DarkRed;
                 WriteLine(" 4. Выйти");
                 ResetColor();
+               
 
                 ConsoleKeyInfo keyInfo = ReadKey(intercept: true);
                 bool isValidInput = Enum.TryParse(keyInfo.KeyChar.ToString(), out option);
@@ -43,6 +46,7 @@ namespace Makler
                     case MenuOption.AddApartment:
                         actionsFlats.AddFlat();
                         actionsFlats.SaveDataToFile(actionsFlats);
+
                         break;
 
                     case MenuOption.SearchApartments:
@@ -56,6 +60,7 @@ namespace Makler
                         break;
 
                     case MenuOption.Exit:
+                        
                         WriteLine("Выход из программы.");
                         return;
                 }

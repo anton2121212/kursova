@@ -6,9 +6,6 @@ using System.Threading.Tasks;
 
 namespace Makler
 {
-    /// <summary>
-    /// Класс описывающий квартиру
-    /// </summary>
     public abstract class Flat
     {
         public int CountRooms { get; set; }
@@ -26,6 +23,6 @@ namespace Makler
             AddedTime = addedTime;
         }
         public abstract void Info();
-        
+
     }
 }

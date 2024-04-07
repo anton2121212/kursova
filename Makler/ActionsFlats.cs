@@ -65,8 +65,12 @@ namespace Makler
             }
             if (!foundRequired)
             {
-                HavingFlat havingFlat = new HavingFlat(countRooms, area, floor, region, DateTime.Now) ;
+                HavingFlat havingFlat = new HavingFlat(countRooms, area, floor, region, DateTime.Now);
                 flats.Add(havingFlat);
+                ForegroundColor = ConsoleColor.Green;
+                WriteLine("Новая квартира успешно добавлена.");
+                ResetColor();
+                WriteLine();
             }
         }
         public void WriteFlat()
@@ -114,6 +118,7 @@ namespace Makler
                     flat.Region == region &&
                     Math.Abs(flat.Area - area) <= area * 0.1)
                 {
+                    
                     foundFlat = flat;
                     break;
                 }

@@ -10,7 +10,7 @@ namespace Saltikov_Kursovay
     {
         static void Main(string[] args)
         {
-            string filePath = @"C:\Users\Kirill\Downloads\Kyrsovay-main\Kyrsovay-main\Saltikov Kursovay\File.txt";
+            string filePath = @"C:\Users\Pilot\Desktop\Saltikov Kursovay";
             DoublyLinkedList library = new DoublyLinkedList();
             library.LoadFromFile(filePath);
             while (true)

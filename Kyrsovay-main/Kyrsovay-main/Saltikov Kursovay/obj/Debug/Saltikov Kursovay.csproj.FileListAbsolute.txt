@@ -1,0 +1,16 @@
+C:\Users\Pilot\Desktop\Saltikov Kursovay\bin\Debug\Saltikov Kursovay.exe.config
+C:\Users\Pilot\Desktop\Saltikov Kursovay\bin\Debug\Saltikov Kursovay.exe
+C:\Users\Pilot\Desktop\Saltikov Kursovay\bin\Debug\Saltikov Kursovay.pdb
+C:\Users\Pilot\Desktop\Saltikov Kursovay\obj\Debug\Saltikov Kursovay.csproj.AssemblyReference.cache
+C:\Users\Pilot\Desktop\Saltikov Kursovay\obj\Debug\Saltikov Kursovay.csproj.SuggestedBindingRedirects.cache
+C:\Users\Pilot\Desktop\Saltikov Kursovay\obj\Debug\Saltikov Kursovay.csproj.CoreCompileInputs.cache
+C:\Users\Pilot\Desktop\Saltikov Kursovay\obj\Debug\Saltikov Kursovay.exe
+C:\Users\Pilot\Desktop\Saltikov Kursovay\obj\Debug\Saltikov Kursovay.pdb
+C:\Users\Kirill\Downloads\Kyrsovay-main\Kyrsovay-main\Saltikov Kursovay\bin\Debug\Saltikov Kursovay.exe.config
+C:\Users\Kirill\Downloads\Kyrsovay-main\Kyrsovay-main\Saltikov Kursovay\bin\Debug\Saltikov Kursovay.exe
+C:\Users\Kirill\Downloads\Kyrsovay-main\Kyrsovay-main\Saltikov Kursovay\bin\Debug\Saltikov Kursovay.pdb
+C:\Users\Kirill\Downloads\Kyrsovay-main\Kyrsovay-main\Saltikov Kursovay\obj\Debug\Saltikov Kursovay.csproj.AssemblyReference.cache
+C:\Users\Kirill\Downloads\Kyrsovay-main\Kyrsovay-main\Saltikov Kursovay\obj\Debug\Saltikov Kursovay.csproj.SuggestedBindingRedirects.cache
+C:\Users\Kirill\Downloads\Kyrsovay-main\Kyrsovay-main\Saltikov Kursovay\obj\Debug\Saltikov Kursovay.csproj.CoreCompileInputs.cache
+C:\Users\Kirill\Downloads\Kyrsovay-main\Kyrsovay-main\Saltikov Kursovay\obj\Debug\Saltikov Kursovay.exe
+C:\Users\Kirill\Downloads\Kyrsovay-main\Kyrsovay-main\Saltikov Kursovay\obj\Debug\Saltikov Kursovay.pdb
